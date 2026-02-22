@@ -2,28 +2,30 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
-    private Rigidbody _rigidbody;
     [SerializeField] private float _bulletSpeed = 10f;
+    private Vector3 _direction;
+    private Rigidbody _rigidbody;
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    void OnEnable()
     {
-        _rigidbody.AddForce(transform.forward * _bulletSpeed, ForceMode.Impulse);
+        _rigidbody.linearVelocity = Vector3.zero;      // limpiar velocidad anterior
+        _rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.AddForce(_direction * _bulletSpeed, ForceMode.Impulse);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDirection(Vector3 dir)
     {
-        
+        _direction = dir;
     }
 
-    void OnTriggerEnter(Collider other) 
+    void OnTriggerEnter(Collider other)
     {
+        // Desactivar la bala al tocar cualquier enemigo o jugador
         gameObject.SetActive(false);
     }
 }

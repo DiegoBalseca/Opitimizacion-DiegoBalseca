@@ -545,6 +545,53 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &758787615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758787617}
+  - component: {fileID: 758787616}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &758787616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758787615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2978fa40794844a8e7442254e359dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnInterval: 2
+  _xRange: 5
+  _zSpawn: 10
+--- !u!4 &758787617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758787615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.91, y: 0.75, z: 2.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,8 +695,12 @@ MonoBehaviour:
     poolSize: 0
     pooledObjects: []
   - parentName: Enemigos
-    prefab: {fileID: 677969270477308100, guid: 557dbaa79431ec6448258c0927851bf0, type: 3}
-    poolSize: 0
+    prefab: {fileID: 1519681070324984525, guid: 3ace76c9788a95e4fb6d8e820293666e, type: 3}
+    poolSize: 10
+    pooledObjects: []
+  - parentName: EnemyBullets
+    prefab: {fileID: 6454786293061406870, guid: 5e1bac2bc191fa54ea118f2d7ac6e4ef, type: 3}
+    poolSize: 20
     pooledObjects: []
 --- !u!1 &1106746091
 GameObject:
@@ -808,7 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6dad7c3151c128428db996fa32dd824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 6454786293061406870, guid: 3ae7102398beb934ab35d1491ae7def3, type: 3}
   _BulletSpawn: {fileID: 1313753417}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -822,3 +872,4 @@ SceneRoots:
   - {fileID: 993888704}
   - {fileID: 280072911}
   - {fileID: 1313753417}
+  - {fileID: 758787617}

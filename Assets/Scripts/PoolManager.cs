@@ -10,7 +10,7 @@ public class PoolManager : MonoBehaviour
         public string parentName;
         public GameObject prefab;
         public int poolSize;
-        public List<GameObject> pooledObjects;
+        public List<GameObject> pooledObjects = new List<GameObject>();
     }
 
     [SerializeField] private List<Pool> _pools;
